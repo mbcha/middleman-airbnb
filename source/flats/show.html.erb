@@ -1,0 +1,87 @@
+<!-- Access data.flats with owner's name as key -->
+<% flat = data.flats[owner] %>
+
+<!-- Inject flat data in template -->
+<%= partial 'layouts/wrapper', locals: { city: flat.city_slug } %>
+
+<div class="flat-owner-container">
+  <div class="container">
+    <div class="row row-owner">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+        <div class="flat-info">
+          <div class="flat-owner">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "img-circle img-owner" %>
+            <p><%= owner %></p>
+          </div>
+          <div class="flat-location">
+            <h3><%= flat.description %></h3>
+            <p><%= flat.city_name %></p>
+            <div class="rating-stars">
+              <% flat.rating.times do %>
+              <i class="fas fa-star rating-stars"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= partial 'layouts/form' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="flat-info-container">
+  <div class="container">
+
+    <div class="row row-flat">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <div class="flat-description">
+          <h3>About this flat</h3>
+          <p>This one bedroom studio lodges 2 people (there's 1 double bed) it is located in the city center, in a calm traditional residential area near city´s main Avenue - 3 minutes walk from Sacré Coeur.</p>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-2 col-sm-offset-1">
+        <div class="flat-space">
+          <p>The Space</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <p>Accommodates: <strong>2</strong></p>
+        <p>Bathrooms: <strong>1</strong></p>
+        <p>Bed type: <strong>Real Bed</strong></p>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <p>Bedrooms: <strong>1</strong></p>
+        <p>Beds: <strong>1</strong></p>
+        <p>Property Type: <strong>Apartment</strong></p>
+      </div>
+      <hr>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-2 col-sm-offset-1">
+        <div class="flat-amenities">
+          <p>Amenities</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <p><strong>Kitchen</strong></p>
+        <p><strong>Wifi</strong></p>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <p><strong>TV</strong></p>
+        <p><strong>Welcome Drink</strong></p>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <div class="line"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
